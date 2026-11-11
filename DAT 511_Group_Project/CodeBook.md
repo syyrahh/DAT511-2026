@@ -94,7 +94,7 @@ The script checks the final dataset for missing values using `sum(is.na(tidy_dat
 1. Install R and RStudio.
 2. Install `dplyr` by running `install.packages("dplyr")`.
 3. Place the extracted `UCI HAR Dataset` folder alongside `GroupWork.R`.
-4. Open `GroupWork.R` in RStudio.
+4. Open `GroupWork_RAHMANI,SYEDA&LANI,KEGLER.R` in RStudio.
 5. Run the script.
 6. Confirm that `tidy_data.txt` is created.
 

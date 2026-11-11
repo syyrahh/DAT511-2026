@@ -1,4 +1,4 @@
-#DAT 511 Group Project - SYEDA RAHMANI
+#DAT 511 Group Project - SYEDA RAHMANI & LANI KEGLER 
 
 ##Human Activity Recognition Using Smartphones
 
@@ -8,7 +8,7 @@ This project uses smartphone sensor data to study six physical activities perfor
 
 ###Project Files
 
-- `GroupWork.R`: R script that reads, cleans, combines, and summarizes the original datasets.
+- `GroupWork_RAHMANI&LANI,KEGLER.R`: R script that reads, cleans, combines, and summarizes the original datasets.
 - `tidy_data.txt`: Final tidy dataset containing average measurements for each subject and activity.
 - `CodeBook.md`: Documentation describing the dataset, variables, data types, and processing steps.
 - `UCI HAR Dataset/`: Original dataset files used by the R script.
