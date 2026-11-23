@@ -1,0 +1,104 @@
+---
+title: "Weather Events in the U.S - 2024 NOAA Storm Data Analysis"
+author: "Syeda Rahmani"
+date: "2026-11-23"
+output: html_document
+---
+#Synopsis
+
+This report examines severe weather events recorded in the United States during 2024 using the National Oceanic and Atmospheric Administration (NOAA) Storm Events Database. The purpose of this analysis is to identify which weather events caused the greatest number of deaths and injuries, which events were most frequently recorded in different states, how weather events varied throughout the year, and which events caused the most estimated property damage. The findings can help government agencies and local officials better understand severe weather risks and prepare for future events.
+
+#Data Processing
+
+The data were obtained from the NOAA Storm Events Database for 2024. Three CSV files were used: storm event details, fatalities, and locations. These files were joined using the `EVENT_ID` variable to create a combined dataset.
+
+The event details dataset contained 69,802 records, the fatalities dataset contained 1,142 records, and the locations dataset contained 40,258 records. The event details dataset was used for the main analysis to avoid counting the same event multiple times when events had multiple location or fatality records.
+
+The data processing included calculating total fatalities and injuries, identifying the month of each event, grouping weather events by type and state, and converting estimated property damage into dollar amounts. The following R code performs the data preparation and creates the results used in this report.
+
+```{r data-processing, echo=TRUE, message=FALSE, warning=FALSE, results='hide', fig.show='hide'}
+source("NOAA_Analysis_RAHMANI.R", echo = TRUE, print.eval = FALSE)
+```
+
+#Results
+
+##Question 1: Which Weather Events Were Most Harmful to Population Health?
+
+The first question examines which severe weather events caused the greatest number of deaths and injuries during 2024. Total fatalities were calculated by combining direct and indirect deaths, while total injuries were calculated by combining direct and indirect injuries.
+
+According to the results, tornadoes caused the highest combined number of deaths and injuries, with 711 reported cases, including 53 deaths and 658 injuries. Heat was the second-highest category, with 392 combined deaths and injuries, followed by excessive heat with 353. Although tornadoes caused the greatest combined harm, excessive heat had the highest number of deaths among individual weather event categories, with 253 fatalities.
+
+```{r figure-health, echo=TRUE, fig.width=9, fig.height=6, fig.cap="Figure 1. Ten weather event types with the highest combined fatalities and injuries in 2024."}
+print(plot1)
+```
+
+These findings show that different types of severe weather affect population health in different ways. Tornadoes were associated with many injuries, while heat-related events caused a particularly high number of deaths. This suggests that both immediate storm hazards and extreme temperatures are important concerns for public safety.
+
+##Question 2: Which Weather Events Were Most Common in Different States?
+
+The second question examines how the frequency of severe weather events differed across states. Weather events were grouped by state and event type, and the most frequently recorded event type was identified for each state.
+
+The results show that thunderstorm wind was the most frequently recorded event type in many states. For example, New York recorded 1,021 thunderstorm wind events, Kansas recorded 1,043, and Georgia recorded 1,002. However, other states had different leading event types. Texas recorded 1,588 hail events, California recorded 583 high wind events, and Colorado recorded 439 heavy snow events.
+
+The following table provides selected examples from the state-level analysis.
+
+```{r state-table, echo=TRUE}
+selected_states <- top_state_events %>%
+  filter(STATE %in% c(
+    "NEW YORK", "TEXAS", "CALIFORNIA",
+    "KANSAS", "GEORGIA", "COLORADO"
+  )) %>%
+  arrange(STATE)
+
+knitr::kable(
+  selected_states,
+  col.names = c("State", "Most Frequent Event", "Number of Events"),
+  caption = "Most frequently recorded weather event types in selected states during 2024."
+)
+```
+
+The results indicate that severe weather patterns vary by location. While thunderstorm wind was common across many states, hail, high wind, and heavy snow were more frequently recorded in certain areas. These differences show why local and state governments may need different approaches when preparing for severe weather.
+
+The next figure shows the ten most frequently recorded weather event types across the full dataset.
+
+```{r figure-frequency, echo=TRUE, fig.width=9, fig.height=6, fig.cap="Figure 2. Ten most frequently recorded weather event types across the NOAA 2024 dataset."}
+print(plot2)
+```
+
+##Question 3: Which Weather Events Were Associated With Particular Months?
+
+The third question examines whether certain weather events were more common during particular months of the year. The beginning date of each event was used to identify its month, and the events were grouped by month and event type.
+
+The results show clear seasonal differences. Winter weather was the most frequently recorded event in January, February, and December. Hail was the leading event type in March. Thunderstorm wind was the most frequently recorded event from April through September, with May having 4,638 thunderstorm wind events. Drought was the most frequently recorded event in October and November.
+
+```{r figure-months, echo=TRUE, fig.width=10, fig.height=6, fig.cap="Figure 3. Monthly frequency of the ten most common weather event types in 2024."}
+print(plot3)
+```
+
+These findings show that weather event patterns change throughout the year. Winter weather was more common during colder months, while thunderstorm wind was especially frequent during spring and summer. Understanding these seasonal patterns can help local officials plan for weather-related risks throughout the year.
+
+##Question 4: Which Weather Events Caused the Greatest Estimated Property Damage?
+
+The fourth question examines which types of severe weather caused the highest estimated property damage during 2024. Property damage values were converted into dollar amounts and summarized by weather event type.
+
+The results show that hurricanes and typhoons caused the greatest estimated property damage, totaling approximately $5.30 billion. Flash floods ranked second at approximately $3.14 billion, followed by tropical storms at $1.90 billion, tornadoes at $1.72 billion, and wildfires at $1.10 billion.
+
+```{r figure-damage, echo=TRUE, fig.width=9, fig.height=6, fig.cap="Figure 4. Ten weather event types with the greatest estimated property damage in 2024, expressed in billions of U.S. dollars."}
+print(plot4)
+```
+
+These results suggest that hurricanes, flooding, and other major storms can create substantial financial losses. Although some events may occur less frequently than others, they can still cause significant damage to buildings, infrastructure, and communities.
+
+#Conclusion
+
+This analysis examined the effects of severe weather events in the United States during 2024 using NOAA Storm Events data. The findings showed that tornadoes caused the highest combined number of deaths and injuries, while excessive heat caused the highest number of deaths among individual event categories. Thunderstorm wind was frequently recorded across many states, although the leading event types varied by location. The analysis also showed seasonal patterns, with winter weather more common during colder months and thunderstorm wind more frequent during spring and summer.
+
+In terms of estimated property damage, hurricanes and typhoons caused the greatest financial losses, followed by flash floods and tropical storms. Overall, the findings demonstrate that severe weather can affect communities in different ways depending on the event type, location, and time of year.
+
+These results may be useful for government agencies, emergency management officials, and local communities when planning for severe weather. However, the analysis is based on reported events and estimated damages, so the findings should be interpreted with those limitations in mind.
+
+#Data Source
+
+National Oceanic and Atmospheric Administration (NOAA). Storm Events Database, 2024.
+
+https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/

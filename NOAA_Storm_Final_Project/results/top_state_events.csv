@@ -1,0 +1,69 @@
+STATE,EVENT_TYPE,Event_Count
+ALABAMA,Thunderstorm Wind,569
+ALASKA,Blizzard,85
+AMERICAN SAMOA,Flash Flood,6
+ARIZONA,Thunderstorm Wind,174
+ARKANSAS,Thunderstorm Wind,329
+ATLANTIC NORTH,Marine Thunderstorm Wind,652
+ATLANTIC SOUTH,Marine Thunderstorm Wind,486
+CALIFORNIA,High Wind,583
+COLORADO,Heavy Snow,439
+CONNECTICUT,Thunderstorm Wind,128
+DELAWARE,Thunderstorm Wind,21
+DISTRICT OF COLUMBIA,Thunderstorm Wind,11
+E PACIFIC,Waterspout,5
+FLORIDA,Thunderstorm Wind,475
+GEORGIA,Thunderstorm Wind,1002
+GUAM,Drought,27
+GUAM WATERS,Marine Strong Wind,1
+GULF OF ALASKA,Marine Thunderstorm Wind,2
+GULF OF MEXICO,Marine Thunderstorm Wind,728
+HAWAII,High Surf,77
+IDAHO,Thunderstorm Wind,261
+ILLINOIS,Thunderstorm Wind,959
+INDIANA,Thunderstorm Wind,426
+IOWA,Thunderstorm Wind,659
+KANSAS,Thunderstorm Wind,1043
+KENTUCKY,Thunderstorm Wind,818
+LAKE ERIE,Marine Thunderstorm Wind,92
+LAKE HURON,Marine Thunderstorm Wind,19
+LAKE MICHIGAN,Marine Thunderstorm Wind,117
+LAKE ONTARIO,Marine Thunderstorm Wind,27
+LAKE ST CLAIR,Marine Thunderstorm Wind,31
+LAKE SUPERIOR,Marine Thunderstorm Wind,35
+LOUISIANA,Thunderstorm Wind,425
+MAINE,Thunderstorm Wind,127
+MARYLAND,Thunderstorm Wind,202
+MASSACHUSETTS,Thunderstorm Wind,127
+MICHIGAN,Thunderstorm Wind,263
+MINNESOTA,Thunderstorm Wind,363
+MISSISSIPPI,Thunderstorm Wind,419
+MISSOURI,Thunderstorm Wind,723
+MONTANA,High Wind,435
+NEBRASKA,Thunderstorm Wind,599
+NEVADA,High Wind,245
+NEW HAMPSHIRE,Thunderstorm Wind,109
+NEW JERSEY,Thunderstorm Wind,262
+NEW MEXICO,Drought,375
+NEW YORK,Thunderstorm Wind,1021
+NORTH CAROLINA,Thunderstorm Wind,696
+NORTH DAKOTA,Hail,174
+OHIO,Thunderstorm Wind,639
+OKLAHOMA,Heat,912
+OREGON,Heavy Snow,76
+PENNSYLVANIA,Thunderstorm Wind,971
+PUERTO RICO,Flood,207
+RHODE ISLAND,Thunderstorm Wind,11
+SOUTH CAROLINA,Thunderstorm Wind,491
+SOUTH DAKOTA,Thunderstorm Wind,501
+ST LAWRENCE R,Marine Thunderstorm Wind,3
+TENNESSEE,Thunderstorm Wind,504
+TEXAS,Hail,1588
+UTAH,Thunderstorm Wind,229
+VERMONT,Winter Weather,92
+VIRGIN ISLANDS,Excessive Heat,14
+VIRGINIA,Thunderstorm Wind,732
+WASHINGTON,Heavy Snow,90
+WEST VIRGINIA,Thunderstorm Wind,481
+WISCONSIN,Thunderstorm Wind,342
+WYOMING,High Wind,271
